@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Remove_duplicate_char
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a string :");
+            string str=Console.ReadLine().ToLower();
+            string result=String.Empty;
+            //for(int i=0;i<str.Length;i++)
+            //{
+            //    if (!result.Contains(str[i]))
+            //    {
+            //        result += str[i];
+            //    }
+            //}
+            //Console.WriteLine(result);
+
+            foreach(char c in str)
+            {
+                bool isDuplicate=false;
+                foreach(char r in result)
+                {
+                    if(r == c)
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+
+                }
+                if(!isDuplicate)
+                {
+                    result += c;
+                }
+            }
+            Console.WriteLine("String without duplicates  "+result);
+        }
+    }
+}
